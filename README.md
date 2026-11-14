@@ -76,7 +76,14 @@ Indian mobile numbers are the weakest at 9/24. Ten-digit codes that start with 6
 
 Redact → ask → restore only works if the model repeats the placeholder. 160 tasks whose answers must repeat the sensitive values (a table, a WhatsApp message, a JSON object, an `.env` file) were redacted two ways and answered by three local models and Gemini:
 
-<!-- ROUNDTRIP -->
+| Model | Values restored, tags `[PAN_1]` | Values restored, fake look-alikes | Answers that point out the placeholder (tags) |
+|---|---|---|---|
+| qwen3-1.7b | 100.0% | 96.3% | 0.0% |
+| llama-3.2-3b-instruct | 100.0% | 88.3% | 0.0% |
+| gemma-3-4b-it | 93.0% | 99.5% | 35.0% |
+| gemini-3.5-flash-lite | 100.0% | 96.0% | 0.0% |
+
+Tags are the safer default: Qwen, Llama and Gemini repeated every one. Gemma repeated 93% and pointed out the placeholder in 35% of its answers ("replace [PAN_1] with your PAN"). Fake look-alikes read more naturally but get "corrected" or reformatted more often: Llama restored only 88%. parda uses tags by default.
 
 ## Reproduce
 
