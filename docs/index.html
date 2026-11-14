@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>parda · check before you paste into a chatbot</title>
+<meta name="description" content="parda finds API keys, passwords, Aadhaar, PAN, UPI, card and bank numbers in text before you paste it into ChatGPT, swaps them for placeholders, and puts the real values back into the answer. Runs in your browser. Plus Leak Hunt, a game that trains you to spot them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="veil"><svg viewBox="0 0 24 24" fill="none" stroke="#17121f" stroke-width="2.4" stroke-linecap="round"><path d="M4 5c3 2 13 2 16 0M5 5c0 7 2 12 7 14 5-2 7-7 7-14"/><path d="M9 11h.01M15 11h.01"/></svg></span>parda</a>
+  <div class="links"><a href="#play">Play</a><a href="#scan">Scanner</a><a href="#results">Results</a><a href="#how">How it works</a><a class="gh" href="https://github.com/rishikeshn-eng/parda" target="_blank" rel="noopener">GitHub ↗</a></div>
+</div></nav>
+
+<main id="top">
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="kicker">AI safety · data leakage</div>
+      <h1>Would you <span class="hl">paste this?</span></h1>
+      <p class="lead">People paste passwords, API keys, Aadhaar and card numbers into chatbots every day, usually without noticing. <b>parda</b> ("veil" in Hindi) spots them before you hit send, swaps each one for a placeholder, and puts the real values back into the chatbot's answer. It runs entirely in your browser.</p>
+      <div class="cta"><a class="btn pink" href="#play">▶ Play Leak Hunt</a><a class="btn white" href="#scan">Scan my text</a></div>
+    </div>
+    <div class="stickers" id="stickers"></div>
+  </header>
+</div>
+
+<section id="play"><div class="wrap">
+  <div class="kicker">The game</div>
+  <h2>Leak Hunt</h2>
+  <p class="lead" style="color:var(--muted)">A message is about to be sent. Tap everything you wouldn't want a chatbot company, its logs, or its next training run to keep. Decoys look sensitive but aren't: an order number, a card that fails its checksum, AWS's own example key. Tapping a decoy costs points.</p>
+  <div class="game">
+    <div class="map" id="map"></div>
+    <div class="hud" id="hud">
+      <span class="pill" id="lvl">Rookie · 1/5</span><span class="pill" id="score">0 pts</span><span class="pill combo" id="combo">×1</span><span class="pill hearts" id="hearts">♥♥♥</span>
+      <div class="timer" id="timer"><i></i></div>
+    </div>
+    <div class="phone">
+      <div class="top"><span class="ava">AI</span> New chat · <span class="note" style="margin:0">draft, not sent yet</span></div>
+      <div class="bubble" id="bubble"></div>
+      <div class="composer">
+        <span class="hint" id="hint">Tap each sensitive item, then press Send.</span>
+        <button class="btn teal" id="start">▶ Start</button>
+        <button class="btn pink" id="send">Send it ➤</button>
+        <button class="btn white hidden" id="next">Next message →</button>
+      </div>
+    </div>
+    <div class="reveal" id="reveal"></div>
+    <div class="banner hidden" id="end"></div>
+  </div>
+</div></section>
+
+<section id="scan"><div class="wrap">
+  <div class="kicker">The tool</div>
+  <h2>Scan before you paste</h2>
+  <p class="lead" style="color:var(--muted)">Nothing leaves this page: the scanner is a few kilobytes of JavaScript running locally. Paste a draft, copy the safe version into any chatbot, then paste its answer back to get your real values restored.</p>
+  <div class="row chips" id="samples"></div>
+  <div class="scanner">
+    <div class="card">
+      <h3>1 · Your draft</h3>
+      <textarea id="input" spellcheck="false" placeholder="Paste the message you were about to send…"></textarea>
+      <div class="row"><input type="text" id="custom" placeholder="Extra private words, comma-separated (your name, a project code name…)"></div>
+      <div class="row"><span class="seg" id="style"><button class="on" data-v="tag">Tags [AADHAAR_1]</button><button data-v="surrogate">Fake look-alikes</button></span></div>
+      <div class="meter" aria-hidden="true"><i id="needle" style="left:0%"></i></div>
+      <div class="row"><span class="verdict" id="verdict">Paste something above</span></div>
+      <div class="found" id="found"></div>
+    </div>
+    <div class="card">
+      <h3>2 · What parda sees</h3>
+      <div class="out" id="marked"></div>
+      <h3 style="margin-top:14px">3 · Safe to paste</h3>
+      <div class="out" id="safe"></div>
+      <div class="row"><button class="btn small" id="copy">Copy safe version</button><span class="note" id="copied"></span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h3>4 · Put your values back</h3>
+    <p class="note">Paste the chatbot's answer. Placeholders become your real values again, here in the browser.</p>
+    <div class="grid2"><textarea id="answer" placeholder="Paste the chatbot's answer…" style="min-height:130px"></textarea><div class="out" id="restored"></div></div>
+  </div>
+</div></section>
+
+<section id="results"><div class="wrap">
+  <div class="kicker">Measured</div>
+  <h2>How well does it work?</h2>
+  <div class="grid3" id="headline"></div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card"><h3>Synthetic test sets</h3><p class="note">1,200 chat drafts used while building, then 600 written separately and run once (held out). The point is to check every format; real text is the harder test.</p><div id="goldtable" class="scroll"></div></div>
+    <div class="card"><h3>vs Microsoft Presidio</h3><p class="note">Presidio is the standard open-source PII detector. It was given every predefined recognizer, including its India ones, and any overlapping entity counted as a catch. Held-out set:</p><div class="legend"><span><i style="background:var(--pink)"></i>parda</span><span><i style="background:#9d97a6"></i>Presidio</span></div><div class="bars" id="presbars"></div></div>
+  </div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card"><h3>In real chatbot prompts</h3><p class="note">Every user turn in 2 shards of WildChat-1M and in ShareGPT: 665,413 real messages people sent to ChatGPT. WildChat's authors had already scrubbed PII with Presidio; what's left is what that scrub missed.</p><div id="corpus" class="scroll"></div></div>
+    <div class="card"><h3>Hand-checked precision</h3><p class="note">A random sample of flags, read one by one. v0.1 was tuned on WildChat and tested on unseen ShareGPT. Its failures were fixed, then <b>v0.2</b> was tested on a second fresh sample. The v0.2 numbers are the honest ones.</p><div id="precision" class="scroll"></div></div>
+  </div>
+  <div class="card" style="margin-top:18px"><h3>Do chatbots keep the placeholders?</h3><p class="note">The redact → ask → restore loop only works if the model repeats the placeholder. 160 tasks whose answer must repeat the sensitive values (a table, a message, a JSON object, an .env file), redacted two ways, answered by three local models.</p><div id="roundtrip" class="scroll"></div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="kicker">Under the hood</div>
+  <h2>How it works, and where it fails</h2>
+  <div class="grid2">
+    <div class="steps">
+      <div><b>Formats, then proof.</b> Each detector matches a real format (Aadhaar, PAN, GSTIN, IFSC, UPI handles, card numbers, IBAN, plus 15 secret formats from OpenAI, Anthropic, AWS, GitHub, Google, Slack, Telegram and others), then checks it: the Verhoeff checksum for Aadhaar, Luhn for cards, the GSTIN check character, mod-97 for IBANs.</div>
+      <div><b>Context decides.</b> The 12 digits after "order", "txn" or "PNR" are not an Aadhaar. A number that's the value of <code>"marketCap":</code> isn't one either. Neither are <code>password = getText()</code> or <code>postgres://user:password@host</code>.</div>
+      <div><b>Redact with memory.</b> The same value always gets the same placeholder, so the chatbot's answer still makes sense, and restoring maps each one back. You can choose tags or format-preserving fakes.</div>
+      <div><b>One file, everywhere.</b> The demo, the game and the benchmark all import the same <code>parda.js</code>. It scans tens of thousands of messages a second.</div>
+    </div>
+    <div class="card">
+      <h3>Limitations</h3>
+      <ul>
+        <li><b>No names or addresses.</b> It finds identifiers with a format. Free-text PII like names needs a language model; add them as private words instead.</li>
+        <li><b>Indian mobile numbers are noisy on real text.</b> 9 of 24 flags in the hand check were right. Ten-digit codes starting with 6 to 9 are everywhere (tariff codes, SAP IDs, transaction references).</li>
+        <li><b>It can't tell a real key from a fake one</b> that has the right format. The game's values are generated and never real.</li>
+        <li>The synthetic sets are easy by design and show coverage, not real-world accuracy. Read the hand-checked numbers.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  Built by <a href="https://rishikeshn-eng.github.io/">Rishikesh</a> · MIT licensed · <a href="https://github.com/rishikeshn-eng/parda">code, data recipe and numbers on GitHub</a> · real-text evaluation uses WildChat-1M (ODC-BY) and ShareGPT; only aggregate counts are published.
+</div></footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

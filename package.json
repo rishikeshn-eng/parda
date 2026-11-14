@@ -1,0 +1,13 @@
+{
+  "name": "parda",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Check text for secrets and Indian/global identifiers before pasting it into a chatbot; redact and restore.",
+  "scripts": {
+    "test": "node --test tests/",
+    "gold": "node bench/make_gold.mjs > data/gold.jsonl",
+    "eval": "node bench/eval.mjs data/gold.jsonl"
+  },
+  "license": "MIT"
+}

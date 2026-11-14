@@ -1,0 +1,213 @@
+{
+ "n_messages": 1200,
+ "n_gold_spans": 1631,
+ "micro": {
+  "tp": 1631,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1,
+  "recall": 1,
+  "f1": 1
+ },
+ "per_kind": {
+  "AADHAAR": {
+   "tp": 140,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "ANTHROPIC_KEY": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "AWS_ACCESS_KEY": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "AWS_SECRET": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "BANK_ACCOUNT": {
+   "tp": 70,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "CARD": {
+   "tp": 104,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "DB_URL": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "DOB": {
+   "tp": 70,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "EMAIL": {
+   "tp": 139,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "GITHUB_TOKEN": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "GOOGLE_KEY": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "GSTIN": {
+   "tp": 69,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "HF_TOKEN": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "IFSC": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "IN_PHONE": {
+   "tp": 244,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "IP_ADDRESS": {
+   "tp": 68,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "JWT": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "OPENAI_KEY": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "PAN": {
+   "tp": 105,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "PASSPORT": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "PASSWORD": {
+   "tp": 103,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "SLACK_TOKEN": {
+   "tp": 34,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "UPI_ID": {
+   "tp": 70,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  },
+  "VOTER_ID": {
+   "tp": 35,
+   "fn": 0,
+   "fp": 0,
+   "precision": 1,
+   "recall": 1,
+   "f1": 1
+  }
+ },
+ "negative_messages": 300,
+ "negative_messages_flagged": 0,
+ "positive_messages": 900,
+ "positive_messages_fully_caught": 900,
+ "ms_per_message": 0.024905381666666667,
+ "misses": [],
+ "false_alarms": []
+}

@@ -1,0 +1,236 @@
+{
+ "gold": {
+  "recall_per_kind": {
+   "AADHAAR": [
+    140,
+    140
+   ],
+   "ANTHROPIC_KEY": [
+    0,
+    35
+   ],
+   "AWS_ACCESS_KEY": [
+    3,
+    34
+   ],
+   "AWS_SECRET": [
+    5,
+    34
+   ],
+   "BANK_ACCOUNT": [
+    70,
+    70
+   ],
+   "CARD": [
+    101,
+    104
+   ],
+   "DB_URL": [
+    35,
+    35
+   ],
+   "DOB": [
+    70,
+    70
+   ],
+   "EMAIL": [
+    139,
+    139
+   ],
+   "GITHUB_TOKEN": [
+    0,
+    34
+   ],
+   "GOOGLE_KEY": [
+    4,
+    35
+   ],
+   "GSTIN": [
+    1,
+    69
+   ],
+   "HF_TOKEN": [
+    1,
+    34
+   ],
+   "IFSC": [
+    1,
+    35
+   ],
+   "IN_PHONE": [
+    244,
+    244
+   ],
+   "IP_ADDRESS": [
+    68,
+    68
+   ],
+   "JWT": [
+    5,
+    34
+   ],
+   "OPENAI_KEY": [
+    0,
+    35
+   ],
+   "PAN": [
+    105,
+    105
+   ],
+   "PASSPORT": [
+    35,
+    35
+   ],
+   "PASSWORD": [
+    19,
+    103
+   ],
+   "SLACK_TOKEN": [
+    19,
+    34
+   ],
+   "UPI_ID": [
+    32,
+    70
+   ],
+   "VOTER_ID": [
+    35,
+    35
+   ]
+  },
+  "recall": [
+   1132,
+   1631
+  ],
+  "negative_messages_flagged": [
+   72,
+   300
+  ],
+  "negative_flag_types": {
+   "PHONE_NUMBER": 28,
+   "US_DRIVER_LICENSE": 26,
+   "IP_ADDRESS": 21,
+   "UK_NHS": 2,
+   "IN_AADHAAR": 4,
+   "MEDICAL_LICENSE": 1,
+   "UUID": 5
+  },
+  "ms_per_message": 13.078165054321289
+ },
+ "heldout": {
+  "recall_per_kind": {
+   "AADHAAR": [
+    100,
+    100
+   ],
+   "ANTHROPIC_KEY": [
+    0,
+    20
+   ],
+   "AWS_ACCESS_KEY": [
+    1,
+    20
+   ],
+   "AWS_SECRET": [
+    0,
+    20
+   ],
+   "BANK_ACCOUNT": [
+    20,
+    20
+   ],
+   "CARD": [
+    48,
+    60
+   ],
+   "DB_URL": [
+    0,
+    20
+   ],
+   "DOB": [
+    20,
+    20
+   ],
+   "EMAIL": [
+    60,
+    60
+   ],
+   "GITHUB_TOKEN": [
+    0,
+    20
+   ],
+   "GOOGLE_KEY": [
+    1,
+    20
+   ],
+   "GSTIN": [
+    6,
+    20
+   ],
+   "HF_TOKEN": [
+    2,
+    20
+   ],
+   "IFSC": [
+    1,
+    20
+   ],
+   "IN_PHONE": [
+    60,
+    60
+   ],
+   "IP_ADDRESS": [
+    20,
+    20
+   ],
+   "JWT": [
+    0,
+    20
+   ],
+   "OPENAI_KEY": [
+    2,
+    20
+   ],
+   "PAN": [
+    20,
+    20
+   ],
+   "PASSPORT": [
+    20,
+    20
+   ],
+   "PASSWORD": [
+    19,
+    40
+   ],
+   "SLACK_TOKEN": [
+    13,
+    20
+   ],
+   "UPI_ID": [
+    4,
+    20
+   ],
+   "VOTER_ID": [
+    20,
+    20
+   ]
+  },
+  "recall": [
+   437,
+   700
+  ],
+  "negative_messages_flagged": [
+   45,
+   200
+  ],
+  "negative_flag_types": {
+   "IP_ADDRESS": 50,
+   "PHONE_NUMBER": 28,
+   "IN_AADHAAR": 6,
+   "UUID": 7,
+   "US_DRIVER_LICENSE": 5
+  },
+  "ms_per_message": 11.445361375808716
+ }
+}

@@ -1,0 +1,5 @@
+{"note": "Manual precision review of parda v0.2 (frozen) on a second fresh random sample from WildChat-1M and ShareGPT, excluding every message seen in earlier reviews; up to 12 flags per kind per corpus, labelled by hand. A flag is correct when the value really is that kind of thing (an example IP like 1.2.3.4 still counts as an IP).",
+ "per_kind": {"API_SECRET": [24, 24], "PASSWORD": [17, 24], "TELEGRAM_TOKEN": [11, 11], "IP_ADDRESS": [19, 24], "EMAIL": [16, 24], "IN_PHONE": [9, 24], "PHONE": [8, 12]},
+ "by_severity": {"severe (never paste)": [52, 59], "personal": [25, 48], "low": [27, 36]},
+ "total": [104, 143],
+ "failure_modes": ["10-digit codes that start with 6-9 (tariff codes, SAP ids, transaction refs) read as Indian mobiles", "Kotlin this@Label syntax and git@host remotes read as emails", "dotted software versions (1.5.97.0) read as IP addresses", "INT_MAX +2147483647 read as a phone number", "words after 'password' in prose (hardcoded., hashed:)"]}
