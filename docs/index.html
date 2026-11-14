@@ -96,7 +96,7 @@
     <div class="card"><h3>In real chatbot prompts</h3><p class="note">Every user turn in 2 shards of WildChat-1M and in ShareGPT: 665,413 real messages people sent to ChatGPT. WildChat's authors had already scrubbed PII with Presidio; what's left is what that scrub missed.</p><div id="corpus" class="scroll"></div></div>
     <div class="card"><h3>Hand-checked precision</h3><p class="note">A random sample of flags, read one by one. v0.1 was tuned on WildChat and tested on unseen ShareGPT. Its failures were fixed, then <b>v0.2</b> was tested on a second fresh sample. The v0.2 numbers are the honest ones.</p><div id="precision" class="scroll"></div></div>
   </div>
-  <div class="card" style="margin-top:18px"><h3>Do chatbots keep the placeholders?</h3><p class="note">The redact → ask → restore loop only works if the model repeats the placeholder. 160 tasks whose answer must repeat the sensitive values (a table, a message, a JSON object, an .env file), redacted two ways, answered by three local models.</p><div id="roundtrip" class="scroll"></div></div>
+  <div class="card" style="margin-top:18px"><h3>Do chatbots keep the placeholders?</h3><p class="note">The redact → ask → restore loop only works if the model repeats the placeholder. 160 tasks whose answer must repeat the sensitive values (a table, a message, a JSON object, an .env file), redacted two ways, answered by three local models and Gemini 3.5 Flash-Lite. Tags (parda's default) came back intact more reliably.</p><div id="roundtrip" class="scroll"></div></div>
 </div></section>
 
 <section id="how"><div class="wrap">
