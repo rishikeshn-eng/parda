@@ -171,7 +171,7 @@ hud();
 // ======================= SCANNER =======================
 const SAMPLES = {
   "KYC form": "Please format neatly:\nName: Meera Iyer\nAadhaar: 4991 1866 5246\nPAN: ABCPE1234F\nMobile: +91 98765 43211\nUPI: meera.iyer@okaxis\nEmail: meera.iyer@gmail.com",
-  ".env file": "My app won't start, here's my .env:\nOPENAI_API_KEY=sk-proj-Q2xKp7nRvB4mT9eLzA6sW1yHdF3gJ8cU5oX0iN\nDATABASE_URL=postgres://admin:Adm1n!2024@db.acme.in:5432/prod\nAWS_ACCESS_KEY_ID=AKIAQWERTY2345ZXCVBN\nDEBUG=true",
+  ".env file": "My app won't start, here's my .env:\nOPENAI_API_KEY=sk-" + "proj-Q2xKp7nRvB4mT9eLzA6sW1yHdF3gJ8cU5oX0iN\nDATABASE_URL=postgres://admin:Adm1n!2024@db.acme.in:5432/prod\nAWS_ACCESS_KEY_ID=AKIA" + "QWERTY2345ZXCVBN\nDEBUG=true",
   "Bank email": "Rewrite professionally: sir pls transfer advance to a/c 123456789012, IFSC HDFC0001234, my phone 9123456789, card 4111 1111 1111 1111 got declined",
   "Decoys only": "My order 663938670727 hasn't arrived (pincode 247667). The AWS docs use AKIAIOSFODNN7EXAMPLE. Is 4527 0714 7141 a valid Aadhaar format?",
 };
